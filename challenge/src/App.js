@@ -1,8 +1,7 @@
 
 import './App.css';
 import React,{ useState } from 'react';
-
-import axios from 'axios';
+import fetch from 'node-fetch'
 
 
 const BASE_URL= "https://swe-applicant-challenge.vercel.app/api/challenge"
@@ -21,21 +20,29 @@ function App() {
   };
 
   const handleSubmit = async (e) => {
+   
     e.preventDefault();
     try {
-  const response = await fetch(BASE_URL,{
-    method:'POST',
-    headers:{
-      'Content-Type':'application/json'
-    },
-    body:JSON.stringify(formValues)
-  });
-  if(!response.ok){
-    throw new Error(response.statusText)
-  }
-  setFormValues(initialFormValues)
-    }catch(error){
-      throw error
+      const response = await fetch('https://cors-anywhere.herokuapp.com/' + BASE_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formValues),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Success:', data);
+        alert('Form submitted successfully! We will be in touch.');
+        setFormValues(initialFormValues);
+      } else {
+        console.error('Error:', response.statusText);
+        alert('An error occurred. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
     }
   };
   return (
