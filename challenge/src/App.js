@@ -11,7 +11,7 @@ function App() {
 
   const initialFormValues = {
     email: '',
-    github: '',
+    githubRepoUrl: '',
   };
 
   const [formValues, setFormValues] = useState(initialFormValues);
@@ -23,11 +23,19 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${BASE_URL}`, formValues);
-      setFormValues(initialFormValues);
-  
-    } catch (error) {
-      throw error;
+  const response = await fetch(BASE_URL,{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify(formValues)
+  });
+  if(!response.ok){
+    throw new Error(response.statusText)
+  }
+  setFormValues(initialFormValues)
+    }catch(error){
+      throw error
     }
   };
   return (
@@ -43,8 +51,8 @@ function App() {
       <input type="text" id="email" name="email" onChange={handleChange} value={formValues.email} />
       
       
-      <label htmlFor="github">Github Repo URL:</label>
-      <input type="text" id="github" name="github" onChange={handleChange} value={formValues.github} />
+      <label htmlFor="githubRepoUrl">Github Repo URL:</label>
+      <input type="text" id="githubRepoUrl" name="githubRepoUrl" onChange={handleChange} value={formValues.githubRepoUrl} />
       
       <button type="submit">Submit</button>
       </div>
