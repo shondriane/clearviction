@@ -23,7 +23,7 @@ function App() {
    
     e.preventDefault();
     try {
-      const response = await fetch('https://cors-anywhere.herokuapp.com/' + BASE_URL, {
+      const response = await fetch(BASE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
