@@ -1,6 +1,6 @@
 # Challenge
 
-### Shondriane Mesa-Wise [GitHub](https://github.com/shondriane) | [LinkedIn](https://www.linkedin.com/in/shondriane-mesa-wise/) | [Website]("https://shondriane.com")
+### Shondriane Mesa-Wise [GitHub](https://github.com/shondriane) | [LinkedIn](https://www.linkedin.com/in/shondriane-mesa-wise/) | [Website](https://shondriane.com)
 
 ## **_About Me_**
 
