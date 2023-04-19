@@ -4,7 +4,7 @@
 
 ## **_About Me_**
 
-Hi There! My name is Shondriane Mesa-Wise, and I am excited to bring my passion and skills to ClearViction and contriubte to the organization's success.
+Hi There! My name is Shondriane Mesa-Wise, and I am excited to bring my passion and skills to Clearviction and contriubte to the organization's success.
 As a black lesbian in tech with a background in banking finance and corporate social responsibility, I bring a unique persepctive.
 I thrive in collaborative spaces that foster innovation, creativity, and create meaningful change.
 
