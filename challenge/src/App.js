@@ -5,7 +5,7 @@ import fetch from 'node-fetch'
 
 
 const BASE_URL= "https://swe-applicant-challenge.vercel.app/api/challenge"
-function App() {
+const App= ()=> {
   
 
   const initialFormValues = {
